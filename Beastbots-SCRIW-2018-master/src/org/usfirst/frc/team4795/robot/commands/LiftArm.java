@@ -13,7 +13,7 @@ public class LiftArm extends Command {
 	}
 
 	protected void execute() {
-
+		Robot.arm.Lift(Robot.oi.getButtonA(), Robot.oi.getButtonY());
 	}
 
 	protected boolean isFinished() {

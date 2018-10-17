@@ -18,8 +18,14 @@ public class Arm extends Subsystem {
 		Robot.masterTalon(arm1);
 	}
 	
-	public void Lift(double upvalue) {
-		arm1.set(ControlMode.PercentOutput, upvalue);
+	public void Lift(boolean upvalue, boolean downvalue) {
+		if (upvalue == true) {
+			arm1.set(ControlMode.PercentOutput, 0.5);
+		} else if (downvalue == true) {
+			arm1.set(ControlMode.PercentOutput, -0.5);
+		} else {
+			arm1.set(ControlMode.PercentOutput, 0.0);
+		}
 	}
 	@Override
 	protected void initDefaultCommand() {

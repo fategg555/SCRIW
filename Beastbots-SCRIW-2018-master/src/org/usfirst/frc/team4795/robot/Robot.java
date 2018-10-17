@@ -7,6 +7,7 @@
 
 package org.usfirst.frc.team4795.robot;
 
+import org.usfirst.frc.team4795.robot.commands.AutoDrive;
 import org.usfirst.frc.team4795.robot.subsystems.Arm;
 import org.usfirst.frc.team4795.robot.subsystems.Drivebase;
 import org.usfirst.frc.team4795.robot.subsystems.Intake;
@@ -48,7 +49,7 @@ public class Robot extends TimedRobot {
 	}
 
 	public void autonomousInit() {
-		Scheduler.getInstance().add(new DriveTime());
+		Scheduler.getInstance().add(new AutoDrive(4));
 	}
 
 	public void autonomousPeriodic() {
